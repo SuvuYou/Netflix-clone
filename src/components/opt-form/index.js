@@ -13,9 +13,9 @@ OptForm.Input = function OptInput({ children, placeholder }) {
   );
 };
 
-OptForm.Btn = function OptBtn({ children }) {
+OptForm.Btn = function OptBtn({ children, ...restProps }) {
   return (
-    <Btn>
+    <Btn {...restProps}>
       {children} <img src="/images/icons/chevron-right.png" alt="try now" />
     </Btn>
   );

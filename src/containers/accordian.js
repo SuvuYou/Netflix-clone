@@ -18,7 +18,7 @@ export default function AccordionContainer() {
       })}
       <OptForm>
         <OptForm.Input placeholder="Email adress"></OptForm.Input>
-        <OptForm.Btn>Try it now</OptForm.Btn>
+        <OptForm.Btn to="/signup">Try it now</OptForm.Btn>
         <OptForm.Text>
           Ready to watch? Enter your email to create or restart your membership
         </OptForm.Text>

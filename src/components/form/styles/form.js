@@ -53,16 +53,16 @@ export const Submit = styled.button`
 `;
 
 export const Text = styled.p`
-  margin-top: 10px;
-  color: #8c8c8c;
-  font-size: 13px;
-  line-height: normal;
-`;
-
-export const SmallText = styled.p`
   color: #737373;
   font-size: 16px;
   font-weight: 500;
+`;
+
+export const SmallText = styled.p`
+  margin-top: 10px;
+  color: #8c8c8c;
+  font-size: 11px;
+  line-height: normal;
 `;
 
 export const Link = styled(ReactRoutedLink)`

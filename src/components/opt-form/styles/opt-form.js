@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -30,7 +31,7 @@ export const Input = styled.input`
   font-size: 22px;
 `;
 
-export const Btn = styled.div`
+export const Btn = styled(ReactRouterLink)`
 color: white;
   height: 50px;
   background-color: #e50914;
@@ -40,6 +41,7 @@ color: white;
   font-size: 16px;
   cursor: pointer;
 
+  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
 

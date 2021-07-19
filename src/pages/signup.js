@@ -6,25 +6,35 @@ import { Form } from "../components";
 import { FirebaseContext } from "../context/firebase";
 import * as ROUTES from "../routes";
 
-export default function Sign_In() {
+export default function SIGN_UP() {
+  const [firstName, setfirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { firebase } = useContext(FirebaseContext);
+
   const history = useHistory();
+  const { firebase } = useContext(FirebaseContext);
 
-  const isInvalid = password === "" || email === "";
+  const isInvalid = firstName === "" || password === "" || email === "";
 
-  function handleSignIn(e) {
+  function handleSignUp(e) {
     e.preventDefault();
 
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        history.push(ROUTES.BROWSE);
+      .createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        result.user
+          .updateProfile({
+            displayName: firstName,
+            photoURL: Math.floor(Math.random() * 5) + 1,
+          })
+          .then(() => {
+            history.push(ROUTES.BROWSE);
+          });
       })
       .catch((err) => {
+        setfirstName("");
         setEmail("");
         setPassword("");
         setError(err.message);
@@ -35,9 +45,15 @@ export default function Sign_In() {
     <>
       <HeaderContainer>
         <Form>
-          <Form.Title>Sign In</Form.Title>
+          <Form.Title>Sign Up</Form.Title>
           <Form.Base>
             {error && <Form.Error>{error}</Form.Error>}
+            <Form.Input
+              type="text"
+              placeholder="First name"
+              value={firstName}
+              onChange={({ target }) => setfirstName(target.value)}
+            />
             <Form.Input
               type="text"
               placeholder="Email adress"
@@ -50,13 +66,13 @@ export default function Sign_In() {
               value={password}
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit onClick={handleSignIn} disabled={isInvalid}>
-              Sign In
+            <Form.Submit onClick={handleSignUp} disabled={isInvalid}>
+              Sign Up
             </Form.Submit>
           </Form.Base>
           <Form.Text>
-            New to Netflix?{"   "}{" "}
-            <Form.Link to="/signup">Sign up now.</Form.Link>
+            Already have an account?{"   "}
+            <Form.Link to="/signin">Sign in now.</Form.Link>
           </Form.Text>
 
           <Form.SmallText>
