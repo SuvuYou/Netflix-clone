@@ -3,6 +3,7 @@ import AccordionContainer from "../containers/accordian";
 import JumbotronContainer from "../containers/jumbotron";
 import HeaderContainer from "../containers/headerContainer";
 import { OptForm, Feature } from "../components";
+import FooterContainer from "../containers/footer";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       </HeaderContainer>
       <JumbotronContainer />
       <AccordionContainer />
+      <FooterContainer />
     </>
   );
 }
