@@ -4,10 +4,10 @@ import { Bcground, Inner, ButtonLink, Logo } from "./styles/header";
 
 export default function Header({
   src = "/images/misc/home-bg.jpg",
-  bc = true,
+  bg = true,
   children,
 }) {
-  return bc ? <Bcground src={src}>{children}</Bcground> : children;
+  return bg ? <Bcground src={src}>{children}</Bcground> : children;
 }
 
 Header.Inner = function HeaderInner({ children }) {

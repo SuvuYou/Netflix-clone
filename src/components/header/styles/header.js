@@ -6,7 +6,6 @@ export const Bcground = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 30px 40px;
 
   border-bottom: 8px solid #222;
 `;
@@ -16,6 +15,7 @@ export const Inner = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 30px 40px;
 `;
 
 export const ButtonLink = styled(Link)`
