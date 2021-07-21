@@ -8,6 +8,7 @@ import * as ROUTES from "../routes";
 export default function BrowseContainer({ slides }) {
   const { firebase } = useContext(FirebaseContext);
 
+  const [searchTerm, setSearchTerm] = useState("");
   const user = firebase.auth().currentUser || {};
   const [profile, setProfile] = useState({});
   const [loading, setloading] = useState(true);
@@ -36,6 +37,10 @@ export default function BrowseContainer({ slides }) {
             <Header.TextLink href="#">Films</Header.TextLink>
           </Header.Group>
           <Header.Group>
+            <Header.Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
@@ -66,6 +71,7 @@ export default function BrowseContainer({ slides }) {
             he projects in a futile attempt to feel like he's part of the world
             around him.
           </Header.TextSmall>
+          <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
     </>
