@@ -7,7 +7,7 @@ export default function SelectionFilter({ series, films }) {
       },
       {
         title: "Comedies",
-        data: series.filter((item) => item.genre === "Comedies"),
+        data: series.filter((item) => item.genre === "comedies"),
       },
       {
         title: "Children",
@@ -19,10 +19,6 @@ export default function SelectionFilter({ series, films }) {
       },
       {
         title: "Feel Good",
-        data: series.filter((item) => item.genre === "feel-good"),
-      },
-      {
-        title: "Feel good",
         data: series.filter((item) => item.genre === "feel-good"),
       },
     ],

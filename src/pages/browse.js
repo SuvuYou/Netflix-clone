@@ -8,7 +8,7 @@ export default function Browse() {
   const { films } = useContent("films");
 
   const contentMap = SelectionFilter({ series, films });
-  console.log(contentMap);
+
   return (
     <>
       <BrowseContainer slides={contentMap}></BrowseContainer>

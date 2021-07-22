@@ -7,8 +7,6 @@ export const Bcground = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  border-bottom: 8px solid #222;
-
   @media (max-width: 1100px) {
     ${({ dontShowOnSmallScreen }) => "background-image:none"}
   }
@@ -77,8 +75,8 @@ export const TextSmall = styled.p`
   margin: 0;
 `;
 
-export const TextLink = styled.a`
-  color: white;
+export const TextLink = styled.p`
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   margin-right: 30px;

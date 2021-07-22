@@ -12,6 +12,9 @@ export default function useAuthListener() {
       if (authUser) {
         localStorage.setItem("authUser", JSON.stringify(authUser));
         setUser(authUser);
+      } else {
+        localStorage.removeItem("authUser");
+        setUser(null);
       }
     });
 
