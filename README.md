@@ -2,4 +2,4 @@
 
 Netflix website clone
 
-![](images/netflix-presentation.png)
+![](public/images/netflix-presentation.png)
