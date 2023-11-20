@@ -21,14 +21,12 @@ export default function BrowseContainer({ slides }) {
 
   useEffect(() => {
     setSlideRows(slides[category]);
-    console.log(slideRows);
   }, [slides, category]);
 
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
     } else {
-      console.log(profile);
       setTimeout(() => {
         setloading(false);
       }, 1000);
@@ -43,7 +41,6 @@ export default function BrowseContainer({ slides }) {
     const result = fuse.search(searchTerm).map(({ item }) => item);
 
     if (setSlideRows.length > 0 && searchTerm.length > 3 && result.length > 0) {
-      console.log("asgszd");
       setSlideRows(result);
     } else {
       setSlideRows(slides[category]);

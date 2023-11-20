@@ -1,3 +1,4 @@
+import React from "react";
 import { Accordion } from "../components";
 import faqs from "../fixtures/faqs.json";
 import { OptForm } from "../components";
