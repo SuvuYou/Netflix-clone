@@ -1,0 +1,10 @@
+version: "3"
+services:
+  netflix-clone-frontend:
+    build: .
+    ports: 
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - WATCHPACK_POLLING=true
